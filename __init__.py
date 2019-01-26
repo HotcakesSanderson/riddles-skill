@@ -25,7 +25,7 @@ class Riddles(MycroftSkill):
         riddle = random.choice(self.riddles)
         question = riddle["question"]
         answer = riddle["answer"]
-        self.speak(question)
+        self.speak_dialog(question)
 
 def create_skill():
     return Riddles()
