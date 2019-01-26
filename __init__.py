@@ -20,12 +20,13 @@ class Riddles(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
 
-    @intent_file_handler('riddles.intent')
+    @intent_handler(IntentBuilder("").require("Riddle"))
     def handle_riddles(self, message):
         riddle = random.choice(self.riddles)
         question = riddle["question"]
         answer = riddle["answer"]
-        self.speak_dialog(question)
+        self.speak(question)
+
 
 def create_skill():
     return Riddles()
